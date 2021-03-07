@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PASSWORD GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+    <div class="inputbox">
+        <h2> <i> Login Form - </i> </h2>
+        <input type="text" placeholder="Username">
+
+        <input type="text" name="" placeholder="Create Password" id="password">
+        <input type="submit" value="Login" id="login">
+        
+        <div id="btn" onclick="getpassword();"> Generate Password </div>
+        <p class="forgot"> Forgot Password ? <a href="#">Click here</a>
+        <p class="forgot">Don't hava an account ? <a href="#">Sign up</a>
+
+        </p>
+    </div>
+    </section>
+    <script type="text/javascript">
+        function getpassword() {
+            var chars = "012345abcdefghijklmnoPQRSTUVWXYZ!@#$%&*+_{}";
+            var passwordLength = 8;
+            var password = "";
+            for (var i = 0; i < passwordLength; i++) {
+                var randomNumber = Math.floor(Math.random() * chars.length);
+                password += chars.substring(randomNumber, randomNumber + 1);
+            }
+
+            document.getElementById("password").value = password
+        }
+    </script>
+</body>
+
+</html>
